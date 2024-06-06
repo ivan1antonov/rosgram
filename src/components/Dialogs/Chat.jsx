@@ -4,23 +4,16 @@ import { NavLink } from "react-router-dom";
 import DialogsItem from "./DialogsItem/DialogsItem";
 import Message from "./Message/Message";
 import {
-  addPostActionCreator,
-  updatePostActionCreator,
-} from "../../redux/state.js";
-
-const addMessage = "ADD-Message";
-const onChangeMessage = "On-Change-Message";
+  addDialogsActionCreator,
+  updateDialogsActionCreator,
+} from "../../redux/dialogs-reducer.js";
 
 const Chat = props => {
   const addPost = () => {
-    props.dispatch(
-      addPostActionCreator(addMessage, props.messagesPage.changeMessage)
-    );
+    props.dispatch(addDialogsActionCreator(props.messagesPage.changeMessage));
   };
   const updateChangePost = event => {
-    props.dispatch(
-      updatePostActionCreator(onChangeMessage, event.target.value)
-    );
+    props.dispatch(updateDialogsActionCreator(event.target.value));
   };
   return (
     <div>

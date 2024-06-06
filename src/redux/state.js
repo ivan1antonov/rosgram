@@ -1,3 +1,7 @@
+import dialogsReducer from "./dialogs-reducer";
+import profileReducer from "./profile-reducer";
+import sidebarReducer from "./sidebar-reducer";
+
 const store = {
   _state: {
     profilePage: {
@@ -70,43 +74,11 @@ const store = {
     this._callRender = observer;
   },
   dispatch(action) {
-    if (action.type === "ADD-POST") {
-      let post = {
-        id: this._state.profilePage.post.length + 1,
-        message: action.newMessage,
-        likesCount: 0,
-      };
-      this._state.profilePage.post.push(post);
-      this._state.profilePage.changePost = "";
-      this._callRender(this._state);
-    }
-    if (action.type === "On-Change") {
-      this._state.profilePage.changePost = action.newtext;
-      this._callRender(this._state);
-    }
-    if (action.type === "ADD-Message") {
-      let message = {
-        id: this._state.messagesPage.message.length + 1,
-        text: action.newMessage,
-      };
-      this._state.messagesPage.message.push(message);
-      this._state.messagesPage.changeMessage = "";
-      this._callRender(this._state);
-    } else if (action.type === "On-Change-Message") {
-      this._state.messagesPage.changeMessage = action.newtext;
-      this._callRender(this._state);
-    }
+    this._state.messagesPage = dialogsReducer(this._state.messagesPage, action);
+    this._state.profilePage = profileReducer(this._state.profilePage, action);
+    this._state.sidebar = sidebarReducer(this._state.sidebar, action);
+    this._callRender(this._state);
   },
 };
-
-export const addPostActionCreator = (type, message) => ({
-  type: type,
-  newMessage: message,
-});
-
-export const updatePostActionCreator = (type, text) => ({
-  type: type,
-  newtext: text,
-});
 
 export default store;

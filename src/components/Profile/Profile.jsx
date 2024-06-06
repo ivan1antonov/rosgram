@@ -12,8 +12,4 @@ const Profile = props => {
   );
 };
 
-// data={props.state.post}
-// post={props.post}
-// onChangePost={props.onChangePost}
-
 export default Profile;

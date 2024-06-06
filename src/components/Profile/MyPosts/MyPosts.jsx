@@ -4,19 +4,14 @@ import Post from "./Post/Post";
 import {
   addPostActionCreator,
   updatePostActionCreator,
-} from "../../../redux/state.js";
-
-const addMyPost = "ADD-POST";
-const onChange = "On-Change";
+} from "../../../redux/profile-reducer.js";
 
 const MyPosts = props => {
   const addPost = () => {
-    props.dispatch(
-      addPostActionCreator(addMyPost, props.profilePage.changePost)
-    );
+    props.dispatch(addPostActionCreator(props.profilePage.changePost));
   };
   const updateChangePost = event => {
-    props.dispatch(updatePostActionCreator(onChange, event.target.value));
+    props.dispatch(updatePostActionCreator(event.target.value));
   };
   return (
     <div className={style.post}>
