@@ -1,0 +1,26 @@
+.sidebar {
+  margin-bottom: 30px;
+}
+.friend_title {
+  padding: 10px;
+}
+.friend_items {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 15px;
+  cursor: pointer;
+}
+.friend_items div + div {
+  margin-left: 15px;
+}
+.friend_items div {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+.friend_items div img {
+  height: 70px;
+  width: 70px;
+}

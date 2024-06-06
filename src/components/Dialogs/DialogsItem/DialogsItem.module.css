@@ -1,0 +1,45 @@
+.dialogs {
+  display: grid;
+  grid-template-columns: 3fr 10fr;
+  gap: 15px;
+  margin: 15px;
+}
+.dialog a {
+  color: lightcoral;
+  vertical-align: top;
+}
+.dialog .active {
+  color: black;
+}
+.dialog {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+}
+.dailog_ava {
+  margin-right: 15px;
+  max-width: 40px;
+}
+.dialog_wramper {
+  display: flex;
+  align-items: center;
+}
+.dialog_wramper img {
+  display: block;
+}
+.dialogs_message,
+.dialogs_item {
+  display: grid;
+  grid-template-rows: repeat(4, 1fr);
+}
+.message_item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.message_item_new,
+.message_item_count {
+  padding: 12px;
+  background-color: bisque;
+  border-radius: 15px;
+}

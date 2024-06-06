@@ -1,0 +1,13 @@
+.header {
+  grid-area: h;
+  background-color: green;
+}
+img {
+  width: 70px;
+}
+.header_red {
+  color: red;
+}
+.header_bg {
+  background-color: yellow;
+}

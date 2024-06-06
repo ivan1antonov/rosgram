@@ -1,0 +1,19 @@
+.nav {
+  grid-area: n;
+  background-color: burlywood;
+  padding-top: 100px;
+}
+
+.item {
+  margin-left: 15px;
+  color: brown;
+  cursor: pointer;
+}
+
+.item a {
+  text-decoration: none;
+}
+
+.active {
+  color: gold;
+}

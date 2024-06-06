@@ -1,0 +1,12 @@
+.post {
+  padding-left: 10px;
+}
+
+.post > textarea {
+  width: 300px;
+  height: 70px;
+}
+
+.post_title {
+  margin: 15px 0;
+}
