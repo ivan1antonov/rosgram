@@ -1,20 +1,34 @@
 const addMyPost = "ADD-POST";
 const onChange = "On-Change";
 
-const profileReducer = (state, action) => {
+const initialState = {
+  post: [
+    { id: 1, message: "Hi, how are you?", likesCount: 23 },
+    { id: 2, message: "It's my first post", likesCount: 12 },
+    { id: 3, message: "Hi, how are you?", likesCount: 2 },
+    { id: 4, message: "Bye", likesCount: 34 },
+  ],
+  changePost: "",
+};
+
+const profileReducer = (state = initialState, action) => {
   switch (action.type) {
     case addMyPost:
-      let post = {
+      let newPost = {
         id: state.post.length + 1,
         message: action.newMessage,
         likesCount: 0,
       };
-      state.post.push(post);
-      state.changePost = "";
-      return state;
+      return {
+        ...state,
+        post: [...state.post, newPost],
+        changePost: "",
+      };
     case onChange:
-      state.changePost = action.newtext;
-      return state;
+      return {
+        ...state,
+        changePost: action.newtext,
+      };
     default:
       return state;
   }

@@ -70,14 +70,14 @@ const store = {
   getState() {
     return this._state;
   },
-  updateState(observer) {
+  subscribe(observer) {
     this._callRender = observer;
   },
   dispatch(action) {
     this._state.messagesPage = dialogsReducer(this._state.messagesPage, action);
     this._state.profilePage = profileReducer(this._state.profilePage, action);
     this._state.sidebar = sidebarReducer(this._state.sidebar, action);
-    this._callRender(this._state);
+    this._subscriber(this._state);
   },
 };
 
