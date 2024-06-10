@@ -1,9 +1,9 @@
 import React from "react";
 import style from "./Navbar.module.css";
-import Sidebar from "./Sidebar/Sidebar";
+import SidebarContainer from "./Sidebar/SidebarContainer";
 import { NavLink } from "react-router-dom";
 
-const Navbar = props => {
+const Navbar = () => {
   return (
     <nav className={style.nav}>
       <div className={style.item}>
@@ -46,7 +46,7 @@ const Navbar = props => {
           Settings
         </NavLink>
       </div>
-      <Sidebar state={props.state} />
+      <SidebarContainer />
     </nav>
   );
 };
