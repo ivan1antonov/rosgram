@@ -1,6 +1,7 @@
 import dialogsReducer from "./dialogs-reducer";
 import profileReducer from "./profile-reducer";
 import sidebarReducer from "./sidebar-reducer";
+import sidebarReducer from "./sidebar-reducer";
 
 const store = {
   _state: {
@@ -60,6 +61,31 @@ const store = {
           id: 3,
           name: "Maks",
           ava: "https://cs14.pikabu.ru/post_img/big/2023/02/13/8/1676295806139337963.png",
+        },
+      ],
+    },
+    usersPage: {
+      users: [
+        {
+          id: 1,
+          followed: false,
+          fullname: "Dmitry",
+          status: "I already born",
+          location: { city: "Minsk", country: "Belarus" },
+        },
+        {
+          id: 2,
+          followed: true,
+          fullname: "Sasha",
+          status: "I am here",
+          location: { city: "Minsk", country: "Belarus" },
+        },
+        {
+          id: 3,
+          followed: false,
+          fullname: "Andrew",
+          status: "She was there",
+          location: { city: "Minsk", country: "Belarus" },
         },
       ],
     },
