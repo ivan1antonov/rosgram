@@ -1,23 +1,26 @@
-import React, { useEffect } from "react";
 import Users from "./Users";
-import { toggleFollow, fetchUsers } from "../../redux/users-reducer";
+import {
+  toggleFollow,
+  setUsers,
+  setCurrentPage,
+  setTotalUsersCount,
+  showSpinner
+} from "../../redux/users-reducer";
 import { connect } from "react-redux";
 
 const mapStateToProps = state => ({
   users: state.usersPage.users,
+  currentPage: state.usersPage.currentPage,
+  usersCount: state.usersPage.totalUsersCount,
+  isFetching: state.usersPage.isFetching
 });
 
 const mapDispatchToProps = dispatch => ({
   toggleFollow: id => dispatch(toggleFollow(id)),
-  fetchUsers: () => dispatch(fetchUsers()),
+  setUsers: users => dispatch(setUsers(users)),
+  setCurrentPage: pageNumber => dispatch(setCurrentPage(pageNumber)),
+  setTotalUsersCount: count => dispatch(setTotalUsersCount(count)),
+  showSpinner: bool => dispatch(showSpinner(bool))
 });
 
-const UsersContainer = ({ users, toggleFollow, fetchUsers }) => {
-  useEffect(() => {
-    fetchUsers();
-  }, [fetchUsers]);
-
-  return <Users users={users} toggleFollow={toggleFollow} />;
-};
-
-export default connect(mapStateToProps, mapDispatchToProps)(UsersContainer);
+export default connect(mapStateToProps, mapDispatchToProps)(Users);

@@ -35,3 +35,19 @@
 .users_item__followimg_image img {
   display: block;
 }
+.pagination {
+  display: flex;
+  flex-wrap: wrap;
+}
+.pagination > li {
+  list-style: none;
+  width: 43px;
+  border: 1px solid #000;
+  border-radius: 5px;
+  cursor: pointer;
+  text-align: center;
+}
+.pagination_item__active {
+  background-color: #000;
+  color: #fff;
+}
