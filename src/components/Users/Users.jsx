@@ -32,8 +32,7 @@ class Users extends React.Component {
     let allPagePagination = Math.ceil(this.props.usersCount / 10);
     return (
       <>
-      {this.props.isFetching ? <Preloader /> : null }
-      <div className="users">
+      {this.props.isFetching ? <Preloader /> : <div className="users">
         <h2 className={style.users_title}>Users</h2>
         <ul className="users_list">
           {this.props.users && this.props.users.length > 0 ? (
@@ -88,7 +87,8 @@ class Users extends React.Component {
             </li>
           ))}
         </ul>
-      </div>
+      </div> }
+      
       
       </>
     );
